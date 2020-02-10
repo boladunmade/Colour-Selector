@@ -1,0 +1,166 @@
+import React, { useState, useEffect } from "react";
+import "./App.css";
+
+export default function App() {
+  const [color, changeColor] = useState("");
+  const [copy, changeCopy] = useState("Copy");
+
+  return (
+    <center>
+      <div className="container">
+        <h1>Bring out the beauty in your design</h1>
+        <div className="Red">
+          <h2>Red Colour Family</h2>
+          <button onClick={() => changeColor("lightsalmon")}>#FFA07A</button>
+          <button onClick={() => changeColor("salmon")}>#FA8072</button>
+          <button onClick={() => changeColor("darksalmon")}>#E9967A</button>
+          <button onClick={() => changeColor("lightcoral")}>#F08080 </button>
+          <button onClick={() => changeColor("indianred")}>#CD5C5C</button>
+          <button onClick={() => changeColor("crimson")}>#DC143C</button>
+          <button onClick={() => changeColor("firebrick")}>#B22222</button>
+          <button onClick={() => changeColor("darkred")}> #8B0000</button>
+          <button onClick={() => changeColor("tomato")}> #FF6347</button>
+          <button onClick={() => changeColor("maroon")}> #800000</button>
+        </div>
+
+        <div className="Green">
+          <h2>Green Colour Family</h2>
+          <button onClick={() => changeColor("lawngreen")}>#7CFC00</button>
+          <button onClick={() => changeColor("chartreuse")}> #7FFF00</button>
+          <button onClick={() => changeColor("	limegreen")}>#32CD32</button>
+          <button onClick={() => changeColor("	lime")}>#00FF00 </button>
+          <button onClick={() => changeColor("forestgreen")}>#228B22</button>
+          <button onClick={() => changeColor("darkgreen")}>#006400</button>
+          <button onClick={() => changeColor("	greenyellow")}> #ADFF2F</button>
+          <button onClick={() => changeColor("springgreen")}> #00FF7F</button>
+          <button onClick={() => changeColor("mediumspringgreen")}>
+            #00FA9A
+          </button>
+          <button onClick={() => changeColor("	lightgreen")}> #90EE90</button>
+        </div>
+
+        <div className="yellow">
+          <h2>Yellow Colour Family</h2>
+          <button onClick={() => changeColor("lightyellow")}>#FFFFE0</button>
+          <button onClick={() => changeColor("lemonchiffon")}> #FFFFE0</button>
+          <button onClick={() => changeColor("lightgoldenrodyellow")}>
+            #FAFAD2
+          </button>
+          <button onClick={() => changeColor("papayawhip")}>#FFEFD5 </button>
+          <button onClick={() => changeColor("moccasin")}>#FFE4B5</button>
+          <button onClick={() => changeColor("peachpuff")}>#FFDAB9</button>
+          <button onClick={() => changeColor("palegoldenrod")}> #EEE8AA</button>
+          <button onClick={() => changeColor("khaki")}> #F0E68C</button>
+          <button onClick={() => changeColor("darkkhaki")}>#BDB76B</button>
+          <button onClick={() => changeColor("olive")}> #808000</button>
+        </div>
+
+        <div className="preview" style={{ backgroundColor: color }}>
+          {color}
+        </div>
+        <div>
+          <button className="btn" onClick={() => changeCopy("Copied")}>
+            {copy}
+          </button>
+        </div>
+      </div>
+    </center>
+  );
+}
+
+
+
+CSS
+
+body {
+  background-color: black;
+  color: white;
+}
+
+button {
+  margin: 6px;
+  height: 40px;
+  width: 100px;
+  border-radius: 3px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+}
+
+button::before {
+  top: -4px;
+  left: 10%;
+}
+
+button::after {
+  bottom: -4px;
+
+  right: 10%;
+}
+
+button:hover::before {
+  left: 80%;
+}
+
+button:hover::after {
+  right: 80%;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 14px;
+  background: black;
+  transform: skewX(50deg);
+  transition: 0.4s linear;
+}
+
+.preview {
+  height: 120px;
+  width: 400px;
+  margin-top: 20px;
+  border: 1px solid white;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: cursive;
+}
+
+.Red {
+  color: red;
+  font-family: cursive;
+}
+
+.Red button {
+  font-family: cursive;
+  border: 4px solid red;
+}
+.Green {
+  color: green;
+  font-family: cursive;
+}
+
+.Green button {
+  border: 4px solid green;
+}
+
+.yellow {
+  color: yellow;
+  font-family: cursive;
+}
+
+.yellow button {
+  border: 4px solid yellow;
+}
+
+.btn {
+  font-size: 20px;
+  margin-top: 15px;
+  height: 50px;
+  width: 150px;
+}
